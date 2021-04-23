@@ -26,11 +26,11 @@
     </div>
     <div class="container">
         <div class="header-container header">
-            <a class="navbar-brand logo" href="#"> <img class="logo" src="images/Voting.png"/> </a>
+            <a class="navbar-brand logo" href="index.php"> <img class="logo" src="images/Voting.png"/> </a>
             <div class="header-right">
-                <a class="navbar-item" href="#">Beranda</a>
-                <a class="navbar-item" href="#">Voting</a>
-                <a class="navbar-item" href="#">Hasil</a>
+                <a class="navbar-item" href="index.php">Beranda</a>
+                <a class="navbar-item" href="voting.php">Voting</a>
+                <a class="navbar-item" href="hasil.php">Hasil</a>
                 <a class="navbar-item" href="#">Admin</a>
             </div>
         </div>
