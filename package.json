@@ -1,0 +1,22 @@
+{
+  "name": "kudalaut-ti2-pw2021",
+  "version": "1.0.0",
+  "description": "tubes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/adiyudha/kudalaut-ti2-pw2021.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/adiyudha/kudalaut-ti2-pw2021/issues"
+  },
+  "homepage": "https://gitlab.com/adiyudha/kudalaut-ti2-pw2021#readme",
+  "dependencies": {
+    "bootstrap": "^5.0.0-beta3"
+  }
+}
