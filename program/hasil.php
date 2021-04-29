@@ -41,16 +41,26 @@
     <!-- Hasil Section -->
     <section id="hasil_section">
         <div class="container">
-            <h2>Form Pemilihan</h2>
-            <p><small>Pastikan Nama dan NIKmu valid sesuai KTP</small></p>
-
+            <h2>Hasil Pemilihan Saat Ini</h2>
+            <p><small>Pantau jumlah voting yang masuk secara Realtime</small></p>
+            <div class="prog">
+                <div class="progress mb-3">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Suthanos</div>
+                </div>
+                <div class="progress mb-3">
+                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Tony Sutorak</div>
+                </div>
+                <div class="progress mb-3">
+                    <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Hulak</div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- END Form Section -->
 
     <!-- Profile Developer -->
-    <div class="text-center p-3 footer-bawah">
+    <div class="text-center p-3 footer-bawah fixed-bottom">
         <h5>Developed by</h5>
         <p><small> Mohammad Adiyudha Wisnu Wardana - Satria Galang Saputra - Yustika Rahma </small> </p>
     </div>

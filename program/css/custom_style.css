@@ -138,3 +138,9 @@ div #atas {
 #form-login .container {
     width: 40%;
 }
+
+#hasil_section .progress {
+    height: 50px;
+    font-size: 22px;
+    font-weight: 500;
+}
