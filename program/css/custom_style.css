@@ -1,0 +1,100 @@
+body {
+    display: block;
+    overflow-x: hidden;
+}
+
+nav {
+    background-color: #413C69;
+}
+
+
+.navbar-brand {
+    max-height: 50px;
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: white;
+}
+
+nav ul li a {
+    color: white;
+    font-size: 22px;
+    margin: auto 10px;
+}
+
+
+section {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+section h1 {
+    text-transform: uppercase;
+    font-weight: 900;
+    color: white;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+#hero p {
+    color: white;
+}
+
+#hero {
+    border-radius: 20px;
+    background-color: #413C69;
+}
+
+section p {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+button {
+    max-width: 50%;
+    border-radius: 50px !important;
+}
+
+#hero .col {
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+}
+
+#hero .img-col {
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+#hero img {
+    max-width: 130% !important;
+    width: 80%;
+}
+
+#hero .card {
+    box-shadow: 11px 7px 16px gray;
+    border:0;
+    text-align: center;
+}
+
+div #atas {
+    background-color: #413C69 ;
+}
+
+#ilustrasi img {
+    width: 400px;
+    height: auto;
+}
+
+#img-desc {
+    width: 400px;
+    height: auto;
+}
+
+.deskripsi {
+    margin-bottom: 30px;
+}
+
+.deskripsi p {
+    font-size: 20px;
+}
