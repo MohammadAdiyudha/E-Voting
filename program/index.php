@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>E-Voting</title>
-    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom_style.css">
 </head>
 <body>
@@ -20,16 +20,16 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto ">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                        <a class="nav-link active" aria-current="page" href="index.php">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Voting</a>
+                        <a class="nav-link" href="voting.php">Voting</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Hasil</a>
+                        <a class="nav-link" href="hasil.php">Hasil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Admin</a>
+                        <a class="nav-link" href="admin/admin-login.php">Admin</a>
                     </li>
                 </ul>
             </div>
@@ -42,17 +42,17 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h1>Berikan Suaramu Sekarang Demi Kemajuan Bangsa dan Negara</h1>
+                    <h2>Berikan Suaramu Sekarang Demi Kemajuan Bangsa dan Negara</h2>
                     <button type="button" class="btn btn-light"><strong>Vote Sekarang</strong></button>
                 </div>
-                <div class="col-5 img-col" id="ilustrasi">
+                <div class="col-4 img-col" id="ilustrasi">
                     <img src="images/voting-logo.png" alt="Hero Image" class="float-end">
                 </div>
             </div>
         </div>
     </section>
     <!-- END Hero Section -->
-    
+
     <!-- Kades Section -->
     <section id="kades">
         <div class="container">
@@ -100,16 +100,10 @@
     <!-- END Kades Section -->
 
     <!-- Profile Developer -->
-    <section id="profile">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col">
-                    <h3>Developer</h3>
-                    <p>lorem</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="text-center p-3 footer-bawah">
+        <h5>Developed by</h5>
+        <p><small> Mohammad Adiyudha Wisnu Wardana - Satria Galang Saputra - Yustika Rahma </small> </p>
+    </div>
     <!-- END Profile Developer -->
     
     <!-- Javascript -->
