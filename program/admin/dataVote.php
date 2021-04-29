@@ -1,6 +1,11 @@
+<?php
+include 'koneksi.php';
+?>
+
 <html>
 <head>
-    <title>E-Voting</title>
+   
+    <title>Data Pemilih</title>
    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom_style.css">
 </head>
@@ -20,7 +25,7 @@
                         <a class="nav-link" href="../admin/index.php">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/tambahData.php">Tambah DPT</a>
+                        <a class="nav-link" href="../admin/tambahData.php">Tambah</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../admin/dataPemilih.php">Data Pemilih</a>
@@ -36,61 +41,18 @@
         </div>
     </nav>
     <!-- END Navbar -->
+    <br>
+    <br>
 
     <!-- Hero Section -->
-    <section id="hero">
+     <section>
         <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h2>Selamat Datang Admin</h2>
-                </div>
-                <div class="col-5 img-col" id="ilustrasi">
-                    <img src="../images/voting-logo.png" alt="Hero Image" class="float-end">
-                </div>
-            </div>
+            <h2>Data Vote</h2>
+            
         </div>
     </section>
+    
     <!-- END Hero Section -->
-
-    <!-- Kades Section -->
-    <section id="kades">
-        <div class="container">
-            <div class="deskripsi text-center">
-                <h2>Apa itu E-Voting?</h2>
-                <p>E-Voting adalah sebuah web sarana pemungutan suara dalam 
-                    rangkaian <br> proses pemilu yang dilakukan secara online.</p>
-            </div>
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col">
-                <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">Online</h5>
-                    <p class="card-text">Voting bisa dilakukan dimana saja dan kapan saja karena dilakukan secara online</p>
-                </div>
-                </div>
-            </div>
-            <div class="col">
-                <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">Pantau Realtime</h5>
-                    <p class="card-text">Hasil Voting semua pemilih langsung bisa dipantau pada menu hasil</p>
-                </div>
-                </div>
-            </div>
-             <div class="col">
-                <div class="card">
-                <div class="card-header">
-                    <h5 class="card-title">Ayo Sukseskan Pilkades</h5>
-                    <p class="card-text">golput? golput? golput? enggaklah mending voting aja &#x1F602;</p>
-                </div>
-                </div>
-            </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- END Kades Section -->
 
     <!-- Profile Developer -->
     <div class="text-center p-3 footer-bawah">

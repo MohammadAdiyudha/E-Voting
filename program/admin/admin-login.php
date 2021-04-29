@@ -43,7 +43,7 @@ include 'koneksi.php';
     <section id="form-login">
         <div class="container">
             <h2 class="text-center">Admin Login</h2>
-            <form>
+            <form role="form" method="post">
                 <div class="mb-4">
                     <label for="username" class="form-label">Username</label>
                     <input type="text" class="form-control" name="username">
@@ -67,12 +67,12 @@ include 'koneksi.php';
                          {
                             $_SESSION['loginadmin'] =$ambil->fetch_assoc();
                             echo"<div class ='alert alert-success'>login sukses</div>"; 
-                            echo "<script>location='../admin/index.php';</script>"; 
+                            echo "<meta http-equiv='refresh' content='1;url=../admin/index.php'>";
                          }
                         else
                         {
                             echo"<div class ='alert alert-danger'>login gagal</div>";
-                            echo "<script>location='../admin/admin-login.php';</script>"; 
+                            echo "<meta http-equiv='refresh' content='1;url=../admin/admin-login.php'>";
                           }
                         }
                     ?>
