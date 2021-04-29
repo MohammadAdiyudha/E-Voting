@@ -4,7 +4,7 @@
 <html>
 <head>
     <title>E-Voting</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="css/custom_style.css">
 </head>
 <body>
@@ -49,10 +49,10 @@
                     <img src="images/voting-logo.png" alt="Hero Image" class="float-end">
                 </div>
             </div>
-            </div>
+        </div>
     </section>
     <!-- END Hero Section -->
-
+    
     <!-- Kades Section -->
     <section id="kades">
         <div class="container">
@@ -99,7 +99,20 @@
 
     <!-- END Kades Section -->
 
+    <!-- Profile Developer -->
+    <section id="profile">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col">
+                    <h3>Developer</h3>
+                    <p>lorem</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- END Profile Developer -->
+    
     <!-- Javascript -->
-    <script src="js/bootstrap.bundle.js"></script>
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>
