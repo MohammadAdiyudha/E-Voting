@@ -134,3 +134,7 @@ div #atas {
 #formulir .container{
     width: 80%;
 }
+
+#form-login .container {
+    width: 40%;
+}
