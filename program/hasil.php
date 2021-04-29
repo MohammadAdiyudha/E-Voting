@@ -1,107 +1,62 @@
+<?php 
+
+?>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Hasil Vote</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/responsive.css"/>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
+    <title>Vote Pilihanmu</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom_style.css">
 </head>
-
 <body>
-
-<!-- Navigation
-    ================================================== -->
-<div class="hero-background">
-    <div>
-        <img class="strips" src="images/strips.png">
-    </div>
-    <div class="container">
-        <div class="header-container header">
-            <a class="navbar-brand logo" href="index.php"> <img class="logo" src="images/Voting.png"/> </a>
-            <div class="header-right">
-                <a class="navbar-item" href="index.php">Beranda</a>
-                <a class="navbar-item" href="voting.php">Voting</a>
-                <a class="navbar-item" href="hasil.php">Hasil</a>
-                <a class="navbar-item" href="#">Admin</a>
+    <!-- Navbar -->
+    <nav class="py-2 navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                E-Voting
+            </a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto ">
+                <li class="nav-item">
+                        <a class="nav-link" href="index.php">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="voting.php">Voting</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"  href="hasil.php">Hasil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin/admin-login.php">Admin</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <!--navigation-->
+    </nav>
+    <!-- END Navbar -->
 
 
-        <!-- Hero-Section
-          ================================================== -->
-          <br><br><br>
-        <div class="hero row">
-            <div class="hero-right col-sm-6 col-sm-6">
-                <h1 class="header-headline bold"> Berikan Suaramu Sekarang Demi Kemajuan Desa <br></h1>
-                <a href="#">
-                    <button class="hero-btn"> Vote</button>
-                </a>
-            </div><!--hero-left-->
+    <!-- Hasil Section -->
+    <section id="hasil_section">
+        <div class="container">
+            <h2>Form Pemilihan</h2>
+            <p><small>Pastikan Nama dan NIKmu valid sesuai KTP</small></p>
 
-        </div><!--hero-->
+        </div>
+    </section>
 
-    </div> <!--hero-container-->
+    <!-- END Form Section -->
 
-</div><!--hero-background-->
-
-
-<!-- Pricing
-  ================================================== -->
-<div id="pricing" class="pricing-background">
-
-    <h2 class="pricing-section-header light text-center">Pilkades Serentak 1442 H</h2>
-    <h4 class=" pricing-section-sub text-center light">Ayo manfaatkan hak suaramu dalam pemilu kali ini!</h4>
-
-    <div class="pricing-table row">
-        <div class="col-sm-4">
-            <div class="mid-plan">
-                <h3 class="plan-title light">THANOS</h3>
-                <h4 class="plan-number bold">1</h4> <br>
-                <img src="images/thanos.jpg">
-                <h5 class="textVisi">Visi</h5><br>
-                <h5 class="textVisi">Misi</h5>
-            </div><!--basic-plan--->
-        </div><!--col-->
-
-        <div class="col-sm-4">
-            <div class="mid-plan">
-                <h3 class="plan-title light">Tn.Crab</h3>
-                <h4 class="plan-number bold">2</h4> <br>
-                <img src="images/thanos.jpg">
-                <h5 class="textVisi">Visi</h5><br>
-                <h5 class="textVisi">Misi</h5>
-            </div><!--basic-plan--->
-        </div><!--col-->
-
-       <div class="col-sm-4">
-            <div class="mid-plan">
-                <h3 class="plan-title light">Tony Stark</h3>
-                <h4 class="plan-number bold">3</h4> <br>
-                <img src="images/thanos.jpg">
-                <h5 class="textVisi">Visi</h5><br>
-                <h5 class="textVisi">Misi</h5>
-            </div><!--basic-plan--->
-        </div><!--col-->
-    </div>  <!--pricing-table-->
-
-</div><!--pricing-background-->
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-
-<script src="assets/js/script.js"></script>
-
+    <!-- Profile Developer -->
+    <div class="text-center p-3 footer-bawah">
+        <h5>Developed by</h5>
+        <p><small> Mohammad Adiyudha Wisnu Wardana - Satria Galang Saputra - Yustika Rahma </small> </p>
+    </div>
+    <!-- END Profile Developer -->
+    
+    <!-- Javascript -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
-
 </html>
