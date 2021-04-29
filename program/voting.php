@@ -1,103 +1,92 @@
+<?php 
+
+?>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Voting Page</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/responsive.css"/>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
+    <title>Vote Pilihanmu</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/custom_style.css">
 </head>
-
 <body>
-
-<!-- Navigation
-    ================================================== -->
-<div class="hero-background">
-    <div>
-        <img class="strips" src="images/strips.png">
-    </div>
-    <div class="container">
-        <div class="header-container header">
-            <a class="navbar-brand logo" href="index.php"> <img class="logo" src="images/Voting.png"/> </a>
-            <div class="header-right">
-                <a class="navbar-item" href="index.php">Beranda</a>
-                <a class="navbar-item" href="voting.php">Voting</a>
-                <a class="navbar-item" href="hasil.php">Hasil</a>
-                <a class="navbar-item" href="#">Admin</a>
+    <!-- Navbar -->
+    <nav class="py-2 navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                E-Voting
+            </a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto ">
+                <li class="nav-item">
+                        <a class="nav-link" href="index.php">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="voting.php">Voting</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="hasil.php">Hasil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="admin/admin-login.php">Admin</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <!--navigation-->
+    </nav>
+    <!-- END Navbar -->
 
 
-        <!-- Hero-Section
-          ================================================== -->
-          <br><br><br>
-        <div class="hero row">
-            <div class="hero-right col-sm-6 col-sm-6">
-                <h1 class="header-headline bold"> Berikan Suaramu Sekarang Demi Kemajuan Desa <br></h1>
-                <a href="#">
-                    <button class="hero-btn"> Vote</button>
-                </a>
-            </div><!--hero-left-->
+    <!-- Form Section -->
+    <section id="formulir">
+        <div class="container">
+            <h2>Form Pemilihan</h2>
+            <p><small>Pastikan Nama dan NIKmu valid sesuai KTP</small></p>
 
-        </div><!--hero-->
+            <form>
+                <div class="mb-4">
+                    <label for="namalengkap" class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" id="namalengkap" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-4">
+                    <label for="nik" class="form-label">NIK</label>
+                    <input type="text" class="form-control" id="nik">
+                </div>
+                <div class="row mb-4">
+                    <div class="form-check col-2">
+                        <img src="images/thanosnos.jpg" alt="thanos" class="img-thumbnail">
+                        <input class="form-check-input" type="radio" name="pilihan1radio" id="pilihan1" value="option1">
+                        <label class="form-check-label" for="pilihan1">Suthanos</label>
+                    </div>
+                    <div class="form-check col-2">
+                        <img src="images/ironman_tony.jpg" alt="tony sutorak" class="img-thumbnail">
+                        <input class="form-check-input" type="radio" name="pilihan2radio" id="pilihan2" value="option2">
+                        <label class="form-check-label" for="pilihan2">Tony Sutorak</label>
+                    </div>
+                    <div class="form-check col-2">
+                        <img src="images/hulk.jpg" alt="hulak" class="img-thumbnail">
+                        <input class="form-check-input" type="radio" name="pilihan3radio" id="pilihan3" value="option3">
+                        <label class="form-check-label" for="pilihan3">Hulak</label>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
+    </section>
 
-    </div> <!--hero-container-->
+    <!-- END Form Section -->
 
-</div><!--hero-background-->
-
-
-<!-- Pricing
-  ================================================== -->
-<div id="pricing" class="pricing-background">
-
-    <h2 class="pricing-section-header light text-center">Pilkades Serentak 1442 H</h2>
-    <h4 class=" pricing-section-sub text-center light">Ayo manfaatkan hak suaramu dalam pemilu kali ini!</h4>
-
-    <div class="form-isian">
-        <form>
-            <div class="form-group">
-                <label for="namapemilih-input">Nama Pemilih</label>
-                <input type="name" class="form-control" id="namapemilih-input">
-                
-            </div>
-            <div class="form-group">
-                <label for="nik-input">Password</label>
-                <input type="number" class="form-control" id="nik-input" aria-describedby="nikvalidasi">
-                <small id="nikvalidasi" class="form-text text-muted">Pastikan Nama dan NIK sesuai KTP Anda.</small>
-            </div>
-            <div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
-  <label class="form-check-label" for="inlineRadio1">1</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-  <label class="form-check-label" for="inlineRadio2">2</label>
-</div>
-<div class="form-check form-check-inline">
-  <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3" disabled>
-  <label class="form-check-label" for="inlineRadio3">3 (disabled)</label>
-</div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+    <!-- Profile Developer -->
+    <div class="text-center p-3 footer-bawah">
+        <h5>Developed by</h5>
+        <p><small> Mohammad Adiyudha Wisnu Wardana - Satria Galang Saputra - Yustika Rahma </small> </p>
     </div>
-
-</div><!--pricing-background-->
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-
-<script src="assets/js/script.js"></script>
-
+    <!-- END Profile Developer -->
+    
+    <!-- Javascript -->
+    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
-
 </html>
