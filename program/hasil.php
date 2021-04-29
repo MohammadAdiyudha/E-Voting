@@ -3,7 +3,7 @@
 ?>
 <html>
 <head>
-    <title>Vote Pilihanmu</title>
+    <title>Hasil E-Voting</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom_style.css">
 </head>
@@ -26,7 +26,7 @@
                         <a class="nav-link" href="voting.php">Voting</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page"  href="hasil.php">Hasil</a>
+                        <a class="nav-link active" aria-current="page" href="hasil.php">Hasil</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="admin/admin-login.php">Admin</a>
