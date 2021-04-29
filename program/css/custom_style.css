@@ -109,3 +109,13 @@ div #atas {
 .navbar .active {
     color: #A7C5EB;
 }
+
+#profile {
+    text-align: center;
+    background-color: #413C69;
+    color: white;
+}
+
+.wave {
+    transform: rotate(180dg);
+}
