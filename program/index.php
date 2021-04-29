@@ -1,107 +1,103 @@
+<?php 
+
+?>
 <html>
-
 <head>
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>E-Voting</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css"/>
-    <link rel="stylesheet" href="css/responsive.css"/>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
-
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/custom_style.css">
 </head>
-
 <body>
-
-<!-- Navigation
-    ================================================== -->
-<div class="hero-background">
-    <div>
-        <img class="strips" src="images/strips.png">
-    </div>
-    <div class="container">
-        <div class="header-container header">
-            <a class="navbar-brand logo" href="index.php"> <img class="logo" src="images/Voting.png"/> </a>
-            <div class="header-right">
-                <a class="navbar-item" href="index.php">Beranda</a>
-                <a class="navbar-item" href="voting.php">Voting</a>
-                <a class="navbar-item" href="hasil.php">Hasil</a>
-                <a class="navbar-item" href="admin/admin-login.php">Admin</a>
+    <!-- Navbar -->
+    <nav class="py-3 navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                E-Voting
+            </a>
+            <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto ">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Beranda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Voting</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Hasil</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Admin</a>
+                    </li>
+                </ul>
             </div>
         </div>
-        <!--navigation-->
+    </nav>
+    <!-- END Navbar -->
 
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Tes <br>ini coba h1</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti, saepe.</p>
+                    <button type="button" class="btn btn-dark">Voting</button>
+                </div>
+                <div class="col-5 img-col" id="ilustrasi">
+                    <img src="images/voting-logo.png" alt="Hero Image" class="float-end">
+                </div>
+            </div>
+            </div>
+    </section>
+    <!-- END Hero Section -->
 
-        <!-- Hero-Section
-          ================================================== -->
-          <br><br><br>
-        <div class="hero row">
-            <div class="hero-right col-sm-6 col-sm-6">
-                <h1 class="header-headline bold"> Berikan Suaramu Sekarang Demi Kemajuan Desa <br></h1>
-                <a href="#">
-                    <button class="hero-btn"> Vote</button>
-                </a>
-            </div><!--hero-left-->
+    <!-- Kades Section -->
+    <section id="kades">
+        <div class="container">
+            <div class="deskripsi text-center">
+                <h2>Apa itu E-Voting?</h2>
+                <p>E-Voting adalah sebuah web sarana pemungutan suara dalam 
+                    rangkaian <br> proses pemilu yang dilakukan secara online.</p>
+            </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col">
+                <div class="card">
+                <img src="images/thanos.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                <img src="images/ironman.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                <img src="images/thanos.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+                </div>
+                </div>
+            </div>
+            </div>
 
-        </div><!--hero-->
+        </div>
+    </section>
 
-    </div> <!--hero-container-->
+    <!-- END Kades Section -->
 
-</div><!--hero-background-->
-
-
-<!-- Pricing
-  ================================================== -->
-<div id="pricing" class="pricing-background">
-
-    <h2 class="pricing-section-header light text-center">Pilkades Serentak 1442 H</h2>
-    <h4 class=" pricing-section-sub text-center light">Ayo manfaatkan hak suaramu dalam pemilu kali ini!</h4>
-
-    <div class="pricing-table row">
-        <div class="col-sm-4">
-            <div class="mid-plan">
-                <h3 class="plan-title light">THANOS</h3>
-                <h4 class="plan-number bold">1</h4> <br>
-                <img src="images/thanos.jpg">
-                <h5 class="textVisi">Visi</h5><br>
-                <h5 class="textVisi">Misi</h5>
-            </div><!--basic-plan--->
-        </div><!--col-->
-
-        <div class="col-sm-4">
-            <div class="mid-plan">
-                <h3 class="plan-title light">Tn.Crab</h3>
-                <h4 class="plan-number bold">2</h4> <br>
-                <img src="images/thanos.jpg">
-                <h5 class="textVisi">Visi</h5><br>
-                <h5 class="textVisi">Misi</h5>
-            </div><!--basic-plan--->
-        </div><!--col-->
-
-       <div class="col-sm-4">
-            <div class="mid-plan">
-                <h3 class="plan-title light">Tony Stark</h3>
-                <h4 class="plan-number bold">3</h4> <br>
-                <img src="images/thanos.jpg">
-                <h5 class="textVisi">Visi</h5><br>
-                <h5 class="textVisi">Misi</h5>
-            </div><!--basic-plan--->
-        </div><!--col-->
-    </div>  <!--pricing-table-->
-
-</div><!--pricing-background-->
-
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-
-<script src="assets/js/script.js"></script>
-
+    <!-- Javascript -->
+    <script src="js/bootstrap.bundle.js"></script>
 </body>
-
 </html>
