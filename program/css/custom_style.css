@@ -22,18 +22,21 @@ nav ul li a {
     margin: auto 10px;
 }
 
-
 section {
     padding-top: 50px;
     padding-bottom: 50px;
 }
 
-section h1 {
-    text-transform: uppercase;
-    font-weight: 900;
+#hero h1 {
+    font-weight: 700;
     color: white;
     text-align: left;
     margin-bottom: 20px;
+}
+
+#hero button {
+    width: 200px;
+    font-size: 20px;
 }
 
 #hero p {
@@ -97,4 +100,12 @@ div #atas {
 
 .deskripsi p {
     font-size: 20px;
+}
+
+#kades .card-body {
+    text-align: justify;
+}
+
+.navbar .active {
+    color: #A7C5EB;
 }
