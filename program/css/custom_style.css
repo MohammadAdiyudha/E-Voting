@@ -14,6 +14,7 @@ nav {
     text-transform: uppercase;
     font-weight: 900;
     color: white;
+    font-style: italic;
 }
 
 nav ul li a {
@@ -27,7 +28,7 @@ section {
     padding-bottom: 50px;
 }
 
-#hero h1 {
+#hero h2 {
     font-weight: 700;
     color: white;
     text-align: left;
@@ -84,9 +85,14 @@ div #atas {
     background-color: #413C69 ;
 }
 
-#ilustrasi img {
-    width: 400px;
+#hero #ilustrasi img {
+    width: 300px;
     height: auto;
+}
+
+#hero button {
+    color: #413C69;
+    font-weight: 700;
 }
 
 #img-desc {
@@ -118,4 +124,13 @@ div #atas {
 
 .wave {
     transform: rotate(180dg);
+}
+
+.footer-bawah {
+    background-color: #413C69;
+    color: white;
+}
+
+#formulir .container{
+    width: 80%;
 }
