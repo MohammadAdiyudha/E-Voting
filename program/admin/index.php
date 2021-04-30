@@ -17,7 +17,7 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto ">
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/index.php">Beranda</a>
+                        <a class="nav-link active" href="../admin/index.php">Beranda</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../admin/tambahData.php">Tambah DPT</a>

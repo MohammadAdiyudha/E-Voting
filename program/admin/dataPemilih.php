@@ -6,8 +6,17 @@ include 'koneksi.php';
 <head>
    
     <title>Data Pemilih</title>
-   <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom_style.css">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
+ 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -25,10 +34,10 @@ include 'koneksi.php';
                         <a class="nav-link" href="../admin/index.php">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/tambahData.php">Tambah</a>
+                        <a class="nav-link" href="../admin/tambahData.php">Tambah DPT</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/dataPemilih.php">Data Pemilih</a>
+                        <a class="nav-link active" href="../admin/dataPemilih.php">Data Pemilih</a>
                     </li>
                      <li class="nav-item">
                         <a class="nav-link" href="../admin/dataVote.php">Data Vote</a>
@@ -47,65 +56,33 @@ include 'koneksi.php';
     <!-- Hero Section -->
      <section>
         <div class="container">
-            <h2>Daftar Data Pemilih</h2>
-            
-   <!-- <form action="<?php echo $_SERVER["PHP_SELF"];?>" method="post">
-    <div class="form-group">
-        <?php
-        $kata_kunci="";
-        if (isset($_POST['kata_kunci'])) {
-            $kata_kunci=$_POST['kata_kunci'];
-        }
-        ?>
-        <input type="text-login" name="kata_kunci" value="<?php echo $kata_kunci;?>"
-         class="form-control"  placeholder="Masukkan kata kunci" required/>
-    </div>
-    <div class="form-group">
-        <input type="submit" class="btn btn-info" value="Cari">
-    </div>
-    </form>
+            <h2>Daftar Data Pemilih Tetap</h2>
 
-    <table class="table table-bordered table-hover">
-        <br>
-        <thead>
-        <tr>
-            <th>No</th>
-            <th>Nama</th>
-            <th>NIK</th>
-        </tr>
-        </thead>
-
-        <?php
-        if (isset($_POST['kata_kunci'])) {
-            $kata_kunci=trim($_POST['kata_kunci']);
-            $sql="select *from datapemilih where nama like '%".$kata_kunci."%' or nik like '%".$kata_kunci."%'
-             order by nik asc";
-
-        }else {
-            $sql="select *from datapemilih order by nik asc";
-        }
-
-
-        $hasil=mysqli_query($sql);
-        $no=1;
-        while ($data = mysqli_fetch_array($hasil)) {
-            $no++;
-
-            ?>
-            <tbody>
-            <tr>
-                <td><?php echo $no;?></td>
-                <td><?php echo $data["nama"]; ?></td>
-                <td><?php echo $data["nik"];   ?></td>
-            </tr>
-            </tbody>
-            <?php
-        }
-        ?>
-    </table>
-            
-        </div>
-    </section> -->
+           <table class="table table-bordered table-striped table-hover">
+               <thead bgcolor="#413c69" style="color: white">
+                   <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>NIK</th>
+                   </tr>
+               </thead>
+               <tbody>
+                <?php $nomor=1; ?>
+                <?php $data="SELECT *FROM datapemilih";?>
+                <?php $ambil=$koneksi->query($data);
+                while ($hasil=$ambil->fetch_assoc()) {
+                    ?>
+                   <tr>
+                        <td><?= $nomor; ?></td>
+                        <td><?= $hasil['nama']; ?></td>
+                        <td><?= $hasil['nik']; ?></td>
+                   </tr>
+                   <?php $nomor++; ?>
+               <?php } ?>
+               </tbody>
+           </table>
+   </div>
+</section>
     
     <!-- END Hero Section -->
 
@@ -118,5 +95,10 @@ include 'koneksi.php';
     
     <!-- Javascript -->
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('table').DataTable();
+        });
+    </script>
 </body>
 </html>

@@ -25,13 +25,13 @@ include 'koneksi.php';
                         <a class="nav-link" href="../admin/index.php">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../admin/tambahData.php">Tambah</a>
+                        <a class="nav-link" href="../admin/tambahData.php">Tambah DPT</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../admin/dataPemilih.php">Data Pemilih</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="../admin/dataVote.php">Data Vote</a>
+                        <a class="nav-link active" href="../admin/dataVote.php">Data Vote</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../admin/logout.php">Logout</a>

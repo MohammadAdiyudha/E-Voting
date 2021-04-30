@@ -52,6 +52,10 @@ include 'koneksi.php';
                     <label for="pass" class="form-label">Password</label>
                     <input type="password" class="form-control" name="pass">
                 </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="checkbox">
+                    <label class="form-check-label" for="checkbox">Remember Me</label>
+                </div>
                 <div class="mb-4 text-center">
                     <button type="submit" class="btn btn-primary" name="login" value="login">Login</button>
                 </div>
