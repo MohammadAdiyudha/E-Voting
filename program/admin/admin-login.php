@@ -1,6 +1,7 @@
-<?php 
-
+<?php
+include 'koneksi.php';
 ?>
+
 <html>
 <head>
     <title>Admin Login</title>
@@ -29,7 +30,7 @@
                         <a class="nav-link" href="../hasil.php">Hasil</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="admin/admin-login.php">Admin</a>
+                        <a class="nav-link active" aria-current="page" href="../admin/admin-login.php">Admin</a>
                     </li>
                 </ul>
             </div>
@@ -42,19 +43,43 @@
     <section id="form-login">
         <div class="container">
             <h2 class="text-center">Admin Login</h2>
-            <form>
+            <form role="form" method="post">
                 <div class="mb-4">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" id="username">
+                    <input type="text" class="form-control" name="username">
                 </div>
                 <div class="mb-4">
                     <label for="pass" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="pass">
+                    <input type="password" class="form-control" name="pass">
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" class="form-check-input" name="checkbox">
+                    <label class="form-check-label" for="checkbox">Remember Me</label>
                 </div>
                 <div class="mb-4 text-center">
-                    <button type="submit" class="btn btn-primary">Login</button>
+                    <button type="submit" class="btn btn-primary" name="login" value="login">Login</button>
                 </div>
             </form>
+
+             <?php
+                if(isset($_POST['login']))
+                 {
+                    $ambil = $koneksi->query("SELECT *FROM loginadmin WHERE username ='$_POST[username]'
+                        AND password='$_POST[pass]'");
+                    $yangcocok=$ambil->num_rows;
+                    if ($yangcocok==1)
+                         {
+                            $_SESSION['loginadmin'] =$ambil->fetch_assoc();
+                            echo"<div class ='alert alert-success'>login sukses</div>"; 
+                            echo "<meta http-equiv='refresh' content='1;url=../admin/index.php'>";
+                         }
+                        else
+                        {
+                            echo"<div class ='alert alert-danger'>login gagal</div>";
+                            echo "<meta http-equiv='refresh' content='1;url=../admin/admin-login.php'>";
+                          }
+                        }
+                    ?>
         </div>
     </section>
 
