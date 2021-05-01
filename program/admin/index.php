@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    // Jika belum login, ditendang ke page login
+    if ( !isset ($_SESSION["loginadmin"])) {
+        header("Location: ../admin/admin-login.php");
+        exit;
+    }
+
+?>
+
 <html>
 <head>
     <title>E-Voting</title>

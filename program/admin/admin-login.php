@@ -1,5 +1,12 @@
 <?php
 include 'koneksi.php';
+
+// Cek sudah login apa belum
+if (isset($_SESSION["loginadmin"])) {
+    // Jika sudah login tidak bisa login lagi
+    header("Location: index.php");
+    exit;
+}
 ?>
 
 <html>
