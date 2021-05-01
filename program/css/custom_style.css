@@ -144,3 +144,7 @@ div #atas {
     font-size: 22px;
     font-weight: 500;
 }
+
+.navbar-brand img {
+    height: 50px;
+}
