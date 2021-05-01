@@ -13,6 +13,7 @@
     <title>E-Voting</title>
    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom_style.css">
+    <link rel="icon" href="../images/icon.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navbar -->
