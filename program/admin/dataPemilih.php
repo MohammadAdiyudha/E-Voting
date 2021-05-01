@@ -1,5 +1,11 @@
 <?php
 include 'koneksi.php';
+
+// Jika belum login, ditendang ke page login
+if ( !isset ($_SESSION["loginadmin"])) {
+    header("Location: ../admin/admin-login.php");
+    exit;
+}
 ?>
 
 <html>
@@ -8,6 +14,7 @@ include 'koneksi.php';
     <title>Data Pemilih</title>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom_style.css">
+    <link rel="icon" href="../images/icon.png" type="image/x-icon">
 
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
@@ -23,6 +30,7 @@ include 'koneksi.php';
     <nav class="py-2 navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">
+            <img src="../images/icon.png" alt="logo" class="logo pb-1">
                 Admin E-Voting
             </a>
             <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

@@ -12,6 +12,7 @@
     <nav class="py-2 navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
+                <img src="images/icon.png" alt="logo" class="logo pb-1">
                 E-Voting
             </a>
             <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

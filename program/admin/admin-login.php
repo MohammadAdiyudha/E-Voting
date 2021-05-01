@@ -1,5 +1,12 @@
 <?php
 include 'koneksi.php';
+
+// Cek sudah login apa belum
+if (isset($_SESSION["loginadmin"])) {
+    // Jika sudah login tidak bisa login lagi
+    header("Location: index.php");
+    exit;
+}
 ?>
 
 <html>
@@ -7,12 +14,14 @@ include 'koneksi.php';
     <title>Admin Login</title>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom_style.css">
+    <link rel="icon" href="../images/icon.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="py-2 navbar navbar-expand-lg">
         <div class="container">
             <a class="navbar-brand" href="#">
+            <img src="../images/icon.png" alt="logo" class="logo pb-1">
                 E-Voting
             </a>
             <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
