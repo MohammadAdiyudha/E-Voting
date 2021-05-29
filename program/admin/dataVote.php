@@ -56,6 +56,50 @@ if ( !isset ($_SESSION["loginadmin"])) {
      <section>
         <div class="container">
             <h2>Data Vote</h2>
+            <table class="table table-bordered table-striped table-hover">
+               <thead bgcolor="#413c69" style="color: white">
+                   <tr>
+                    <th>No</th>
+                    <th>NIK</th>
+                    <th>Pilihan</th>
+                    <th>Waktu Pilih</th>
+
+                   </tr>
+               </thead>
+               <tbody>
+                <!-- Data Dummy -->
+                <tr>
+                    <td>1.</td>
+                    <td>123456</td>
+                    <td>Suthanos</td>
+                    <td>2/2/2021</td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td>1234567</td>
+                    <td>Suthanos</td>
+                    <td>2/2/2021</td>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>123456</td>
+                    <td>Suthanos</td>
+                    <td>2/2/2021</td>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>123456</td>
+                    <td>Suthanos</td>
+                    <td>2/2/2021</td>
+                </tr>
+                <tr>
+                    <td>1.</td>
+                    <td>123456</td>
+                    <td>Suthanos</td>
+                    <td>2/2/2021</td>
+                </tr>
+               </tbody>
+           </table>
             
         </div>
     </section>
