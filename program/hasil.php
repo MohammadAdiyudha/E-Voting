@@ -1,8 +1,27 @@
 <?php 
     include 'koneksi.php';
 
-    $hasilseluruh = $koneksi->query("SELECT COUNT(*) FROM datapemilih");
-    $hasilsuthanos = $koneksi->query("SELECT COUNT(*) FROM datapemilih WHERE pilihan='Suthanos'");
+    // Hitung vote masuk dan konversi ke array (agar bisa dikonversi ke string dan tampil saat echo)
+    $ambilseluruh = $koneksi->query("SELECT COUNT(*) AS jumlah FROM datapemilih");
+    $hasilseluruh = $ambilseluruh->fetch_assoc();
+
+    $ambilsuthanos = $koneksi->query("SELECT COUNT(*) AS jumlah FROM datapemilih WHERE pilihan='Suthanos'");
+    $hasilsuthanos = $ambilsuthanos->fetch_assoc();
+    $persensuthanos = ($hasilsuthanos['jumlah'] / $hasilseluruh['jumlah']) * 100;
+
+    $ambiltony = $koneksi->query("SELECT COUNT(*) AS jumlah FROM datapemilih WHERE pilihan='Tony Sutorak'");
+    $hasiltony = $ambiltony->fetch_assoc();
+    $persentony = ($hasiltony['jumlah'] / $hasilseluruh['jumlah']) * 100;
+
+    $ambilhulak = $koneksi->query("SELECT COUNT(*) AS jumlah FROM datapemilih WHERE pilihan='Hulak'");
+    $hasilhulak = $ambilhulak->fetch_assoc();
+    $persenhulak = ($hasilhulak['jumlah'] / $hasilseluruh['jumlah']) * 100;
+
+    $ambilgolput = $koneksi->query("SELECT COUNT(*) AS jumlah FROM datapemilih WHERE pilihan=''");
+    $hasilgolput = $ambilgolput->fetch_assoc();
+    $persengolput = ($hasilgolput['jumlah'] / $hasilseluruh['jumlah']) * 100;
+
+    
     
 ?>
 <html>
@@ -47,17 +66,33 @@
     <!-- Hasil Section -->
     <section id="hasil_section">
         <div class="container">
-            <h2>Hasil Pemilihan Saat Ini</h2>
+            <div class="row">
+                <h2 class="col text-start">Hasil Pemilihan Saat Ini</h2>
+                <h4 class="col text-end align-middle">Jumlah Pemilih = <?= $hasilseluruh['jumlah'] ?></h4>
+            </div>
+
             <p><small>Pantau jumlah voting yang masuk secara Realtime</small></p>
+            
             <div class="prog">
-                <div class="progress mb-3">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">Suthanos</div>
+                <label for="progsuthanos" class=""><h5>Suthanos</h5></label>
+                <div class="progress mb-3" id="progsuthanos">
+                    <div class="progress-bar bg-purple"  role="progressbar" style="width: <?php echo $persensuthanos?>%; background-color: purple !important;" 
+                    aria-valuenow="<?php echo $persensuthanos?>" aria-valuemin="0" aria-valuemax="100"><?php echo $hasilsuthanos['jumlah']?></div>
                 </div>
+                <label for="progtony" class=""><h5>Tony Sutorak</h5></label>
                 <div class="progress mb-3">
-                    <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100">Tony Sutorak</div>
+                    <div class="progress-bar bg-orange" id="progtony" role="progressbar" style="width: <?php echo $persentony?>%; background-color: orange !important;" 
+                    aria-valuenow="<?php echo $persentony?>" aria-valuemin="0" aria-valuemax="100"><?php echo $hasiltony['jumlah']?></div>
                 </div>
+                <label for="proghulak" class=""><h5>Hulak</h5></label>
                 <div class="progress mb-3">
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">Hulak</div>
+                    <div class="progress-bar bg-success" id="proghulak" role="progressbar" style="width: <?php echo $persenhulak?>%" 
+                    aria-valuenow="<?php echo $persenhulak?>" aria-valuemin="0" aria-valuemax="100"><?php echo $hasilhulak['jumlah']?></div>
+                </div>
+                <label for="proggolput" class=""><h5>Belum Memilih</h5></label>
+                <div class="progress mb-3">
+                    <div class="progress-bar bg-danger" id="proggolput" role="progressbar" style="width: <?php echo $persengolput?>%" 
+                    aria-valuenow="<?php echo $persengolput?>" aria-valuemin="0" aria-valuemax="100"><?php echo $hasilgolput['jumlah']?></div>
                 </div>
             </div>
         </div>
@@ -66,7 +101,7 @@
     <!-- END Form Section -->
 
     <!-- Profile Developer -->
-    <div class="text-center p-3 footer-bawah fixed-bottom">
+    <div class="text-center p-3 footer-bawah">
         <h5>Developed by</h5>
         <p><small> Mohammad Adiyudha Wisnu Wardana - Satria Galang Saputra - Yustika Rahma </small> </p>
     </div>
