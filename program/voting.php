@@ -1,16 +1,18 @@
 <?php 
     include 'koneksi.php';
-
+    $notif ='';
     // Cek apakah tombol sudah ditekan atau belum
     if ( isset ( $_POST["submit"] ) ) {
-        $koneksi->query("INSERT INTO datavote VALUES ('','$_POST[nama]','$_POST[nik]','$_POST[rb]')");
+        $koneksi->query("UPDATE datapemilih 
+                        SET pilihan='$_POST[rb]', waktupilih=now() 
+                        WHERE nama='$_POST[nama]' AND nik='$_POST[nik]' AND pilihan=''");
        
-        if ($koneksi->errno) {
-            echo "<div class='alert alert-danger '>VOTE Gagal - NIK tersebut sudah melakukan Vote</div>";
+        if ($koneksi->affected_rows == 0) {
+            $notif = "<div class='alert alert-danger '>VOTE Gagal - Nama atau NIK tidak valid / Identitas tersebut sudah melakukan vote, 
+                        \nJika terjadi kesalahan, Silahkan hubungi WA Admin 0812345 dengan melampirkan bukti SS</div>";
         } else {
-            echo "<div class='alert alert-info'>VOTE Berhasil</div>";
+            $notif =  "<div class='alert alert-info'>VOTE Berhasil</div>";
         }
-        
     }
 
 ?>
@@ -55,6 +57,8 @@
     <!-- Form Section -->
     <section id="formulir">
         <div class="container">
+            <!-- LETAK NOTIF JIKA GAGAL / BERHASIL VOTE -->
+            <?php echo nl2br($notif); ?>
             <h2>Form Pemilihan</h2>
             <p><small>Pastikan Nama dan NIKmu valid sesuai KTP</small></p>
 
