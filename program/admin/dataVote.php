@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 
 // Jika belum login, ditendang ke page login
 if ( !isset ($_SESSION["loginadmin"])) {

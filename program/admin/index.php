@@ -1,4 +1,7 @@
 <?php
+
+    include '../koneksi.php';
+    
     session_start();
     // Jika belum login, ditendang ke page login
     if ( !isset ($_SESSION["loginadmin"])) {
