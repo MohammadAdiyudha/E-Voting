@@ -1,11 +1,16 @@
 <?php 
+    include 'koneksi.php';
 
+    $hasilseluruh = $koneksi->query("SELECT COUNT(*) FROM datapemilih");
+    $hasilsuthanos = $koneksi->query("SELECT COUNT(*) FROM datapemilih WHERE pilihan='Suthanos'");
+    
 ?>
 <html>
 <head>
     <title>Hasil E-Voting</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom_style.css">
+    <link rel="icon" href="images/icon.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navbar -->
