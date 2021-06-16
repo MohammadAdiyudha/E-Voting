@@ -1,4 +1,19 @@
 <?php 
+    include 'koneksi.php';
+    $notif ='';
+    // Cek apakah tombol sudah ditekan atau belum
+    if ( isset ( $_POST["submit"] ) ) {
+        $koneksi->query("UPDATE datapemilih 
+                        SET pilihan='$_POST[rb]', waktupilih=now() 
+                        WHERE nama='$_POST[nama]' AND nik='$_POST[nik]' AND pilihan=''");
+       
+        if ($koneksi->affected_rows == 0) {
+            $notif = "<div class='alert alert-danger '>VOTE Gagal - Nama atau NIK tidak valid / Identitas tersebut sudah melakukan vote, 
+                        \nJika terjadi kesalahan, Silahkan hubungi WA Admin 0812345 dengan melampirkan bukti SS</div>";
+        } else {
+            $notif =  "<div class='alert alert-info'>VOTE Berhasil</div>";
+        }
+    }
 
 ?>
 <html>
@@ -6,6 +21,7 @@
     <title>Vote Pilihanmu</title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/custom_style.css">
+    <link rel="icon" href="images/icon.png" type="image/x-icon">
 </head>
 <body>
     <!-- Navbar -->
@@ -42,37 +58,39 @@
     <!-- Form Section -->
     <section id="formulir">
         <div class="container">
+            <!-- LETAK NOTIF JIKA GAGAL / BERHASIL VOTE -->
+            <?php echo nl2br($notif); ?>
             <h2>Form Pemilihan</h2>
             <p><small>Pastikan Nama dan NIKmu valid sesuai KTP</small></p>
 
-            <form>
+            <form action="" method="post" enctype="multipart/form-data">
                 <div class="mb-4">
                     <label for="namalengkap" class="form-label">Nama Lengkap</label>
-                    <input type="text" class="form-control" id="namalengkap" aria-describedby="emailHelp">
+                    <input type="text" class="form-control" id="namalengkap" aria-describedby="emailHelp" name="nama">
                 </div>
                 <div class="mb-4">
                     <label for="nik" class="form-label">NIK</label>
-                    <input type="text" class="form-control" id="nik">
+                    <input type="text" class="form-control" id="nik" name="nik">
                 </div>
                 <div class="row mb-4">
                     <div class="form-check col-2">
                         <img src="images/thanosnos.jpg" alt="thanos" class="img-thumbnail">
-                        <input class="form-check-input" type="radio" name="pilihan1radio" id="pilihan1" value="option1">
+                        <input class="form-check-input" type="radio" id="pilihan1" value="Suthanos" name="rb">
                         <label class="form-check-label" for="pilihan1">Suthanos</label>
                     </div>
                     <div class="form-check col-2">
                         <img src="images/ironman_tony.jpg" alt="tony sutorak" class="img-thumbnail">
-                        <input class="form-check-input" type="radio" name="pilihan2radio" id="pilihan2" value="option2">
+                        <input class="form-check-input" type="radio" id="pilihan2" value="Tony Sutorak" name="rb">
                         <label class="form-check-label" for="pilihan2">Tony Sutorak</label>
                     </div>
                     <div class="form-check col-2">
                         <img src="images/hulk.jpg" alt="hulak" class="img-thumbnail">
-                        <input class="form-check-input" type="radio" name="pilihan3radio" id="pilihan3" value="option3">
+                        <input class="form-check-input" type="radio" id="pilihan3" value="Hulak" name="rb">
                         <label class="form-check-label" for="pilihan3">Hulak</label>
                     </div>
                 </div>
                 <div class="mb-4">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" name="submit" class="btn btn-primary" value="submit">Submit</button>
                 </div>
             </form>
         </div>

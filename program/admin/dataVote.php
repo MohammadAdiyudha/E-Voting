@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 
 // Jika belum login, ditendang ke page login
 if ( !isset ($_SESSION["loginadmin"])) {
@@ -11,10 +11,19 @@ if ( !isset ($_SESSION["loginadmin"])) {
 <html>
 <head>
    
-    <title>Data Pemilih</title>
+    <title>Data Vote</title>
    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom_style.css">
     <link rel="icon" href="../images/icon.png" type="image/x-icon">
+
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
+ 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js">
+    </script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -63,41 +72,23 @@ if ( !isset ($_SESSION["loginadmin"])) {
                     <th>NIK</th>
                     <th>Pilihan</th>
                     <th>Waktu Pilih</th>
-
                    </tr>
                </thead>
                <tbody>
-                <!-- Data Dummy -->
-                <tr>
-                    <td>1.</td>
-                    <td>123456</td>
-                    <td>Suthanos</td>
-                    <td>2/2/2021</td>
-                </tr>
-                <tr>
-                    <td>2.</td>
-                    <td>1234567</td>
-                    <td>Suthanos</td>
-                    <td>2/2/2021</td>
-                </tr>
-                <tr>
-                    <td>1.</td>
-                    <td>123456</td>
-                    <td>Suthanos</td>
-                    <td>2/2/2021</td>
-                </tr>
-                <tr>
-                    <td>1.</td>
-                    <td>123456</td>
-                    <td>Suthanos</td>
-                    <td>2/2/2021</td>
-                </tr>
-                <tr>
-                    <td>1.</td>
-                    <td>123456</td>
-                    <td>Suthanos</td>
-                    <td>2/2/2021</td>
-                </tr>
+               <?php $nomor=1; ?>
+                    <?php $data="SELECT nik, pilihan, waktupilih FROM datapemilih";?>
+                    <?php $ambil=$koneksi->query($data);
+                    while ($hasil=$ambil->fetch_assoc()) {
+                        ?>
+                        <tr>
+                            <td><?= $nomor; ?></td>
+                            <td><?= $hasil['nik']; ?></td>
+                            <td><?= $hasil['pilihan']; ?></td>
+                            <td><?= $hasil['waktupilih']; ?></td>
+                        </tr>
+                   <?php $nomor++; ?>
+               <?php } ?>
+                
                </tbody>
            </table>
             
@@ -115,5 +106,10 @@ if ( !isset ($_SESSION["loginadmin"])) {
     
     <!-- Javascript -->
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('table').DataTable();
+        });
+    </script>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 
 // Jika belum login, ditendang ke page login
 if ( !isset ($_SESSION["loginadmin"])) {
@@ -76,7 +76,7 @@ if ( !isset ($_SESSION["loginadmin"])) {
                </thead>
                <tbody>
                 <?php $nomor=1; ?>
-                <?php $data="SELECT *FROM datapemilih";?>
+                <?php $data="SELECT nama, nik FROM datapemilih";?>
                 <?php $ambil=$koneksi->query($data);
                 while ($hasil=$ambil->fetch_assoc()) {
                     ?>

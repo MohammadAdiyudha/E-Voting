@@ -1,5 +1,5 @@
 <?php
-include 'koneksi.php';
+include '../koneksi.php';
 
 
 // Jika belum login, ditendang ke page login
@@ -79,8 +79,12 @@ if ( !isset ($_SESSION["loginadmin"])) {
             $koneksi->query("INSERT INTO datapemilih(nama,nik)
                     VALUES('$_POST[namaLengkap]','$_POST[nik]')");
 
-                echo "<div class='alert alert-info'>Tambah DPT Berhasil</div>";
-                echo "<meta http-equiv='refresh' content='1;url='../admin/tambahData.php'>";
+                if ($koneksi->error) {
+                    echo "<div class='alert alert-danger'>Tambah DPT GAGAL</div>";
+                } else {
+                    echo "<div class='alert alert-info'>Tambah DPT Berhasil</div>";
+                    echo "<meta http-equiv='refresh' content='1;url='../admin/tambahData.php'>";
+                }
             }
             ?>
 

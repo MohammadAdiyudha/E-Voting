@@ -45,7 +45,7 @@
             <div class="row">
                 <div class="col">
                     <h2>Berikan Suaramu Sekarang Demi Kemajuan Bangsa dan Negara</h2>
-                    <button type="button" class="btn btn-light"><strong>Vote Sekarang</strong></button>
+                    <button type="button" class="btn btn-light" onclick="location.href='voting.php'" ><strong>Vote Sekarang</strong></button>
                 </div>
                 <div class="col-5 img-col" id="ilustrasi">
                     <img src="images/voting-logo.png" alt="Hero Image" class="float-end">
