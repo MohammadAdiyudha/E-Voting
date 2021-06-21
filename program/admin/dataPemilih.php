@@ -13,6 +13,7 @@ if ( !isset ($_SESSION["loginadmin"])) {
    
     <title>Data Pemilih</title>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../css/custom_style.css">
     <link rel="icon" href="../images/icon.png" type="image/x-icon">
 
@@ -69,23 +70,36 @@ if ( !isset ($_SESSION["loginadmin"])) {
            <table class="table table-bordered table-striped table-hover">
                <thead bgcolor="#413c69" style="color: white">
                    <tr>
-                    <th>No</th>
                     <th>Nama</th>
                     <th>NIK</th>
+                    <th>Action</th>
                    </tr>
                </thead>
                <tbody>
                 <?php $nomor=1; ?>
-                <?php $data="SELECT nama, nik FROM datapemilih";?>
+                <?php $data="SELECT id, nama, nik FROM datapemilih";?>
                 <?php $ambil=$koneksi->query($data);
                 while ($hasil=$ambil->fetch_assoc()) {
                     ?>
                    <tr>
-                        <td><?= $nomor; ?></td>
+                      
                         <td><?= $hasil['nama']; ?></td>
                         <td><?= $hasil['nik']; ?></td>
+                        <td>
+                        
+                        <a href="hapus_data.php?id= <?= $hasil['id']; ?>" type="button" class="close">
+                        <span class="fa fa-trash"></span> 
+                        </a>
+
+                        <div class="col-10">
+                        <a href="update_data.php?id= <?= $hasil['id']; ?>" type="button" class="close">
+                        <span class="fa fa-pencil-square-o" aria-hidden="true"></span>
+                        </a>
+                        </div>   
+
+                        </td>
                    </tr>
-                   <?php $nomor++; ?>
+                   
                <?php } ?>
                </tbody>
            </table>

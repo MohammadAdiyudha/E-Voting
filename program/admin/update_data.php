@@ -1,29 +1,26 @@
 <?php
 include '../koneksi.php';
 
+
 // Jika belum login, ditendang ke page login
 if ( !isset ($_SESSION["loginadmin"])) {
     header("Location: ../admin/admin-login.php");
     exit;
 }
+
+
+$ambil = $koneksi->query("SELECT *FROM datapemilih WHERE id='$_GET[id]'");
+$data = $ambil->fetch_assoc();
+
 ?>
 
 <html>
 <head>
    
-    <title>Data Vote</title>
+    <title>Tambah Data</title>
    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom_style.css">
     <link rel="icon" href="../images/icon.png" type="image/x-icon">
-
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap4.min.css"/>
- 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/js/bootstrap.min.js">
-    </script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -48,7 +45,7 @@ if ( !isset ($_SESSION["loginadmin"])) {
                         <a class="nav-link" href="../admin/dataPemilih.php">Data Pemilih</a>
                     </li>
                      <li class="nav-item">
-                        <a class="nav-link active" href="../admin/dataVote.php">Data Vote</a>
+                        <a class="nav-link" href="../admin/dataVote.php">Data Vote</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../admin/logout.php">Logout</a>
@@ -62,38 +59,45 @@ if ( !isset ($_SESSION["loginadmin"])) {
     <br>
 
     <!-- Hero Section -->
-     <section>
+     <section id="form-login">
         <div class="container">
-            <h2>Data Vote</h2>
-            <table class="table table-bordered table-striped table-hover">
-               <thead bgcolor="#413c69" style="color: white">
-                   <tr>
-                    <th>NIK</th>
-                    <th>Pilihan</th>
-                    <th>Waktu Pilih</th>
-                   </tr>
-               </thead>
-               <tbody>
-               <?php $nomor=1; ?>
-                    <?php $data="SELECT nik, pilihan, waktupilih FROM datapemilih";?>
-                    <?php $ambil=$koneksi->query($data);
-                    while ($hasil=$ambil->fetch_assoc()) {
-                        ?>
-                        <tr>
-                            <td><?= $hasil['nik']; ?></td>
-                            <td><?= $hasil['pilihan']; ?></td>
-                            <td><?= $hasil['waktupilih']; ?></td>
-                        </tr>
-               <?php } ?>
-                
-               </tbody>
-           </table>
-            
+            <h2>Update Data Pemilih</h2>
+            <p><small>Pastikan Nama dan NIK yang di isi sesuai</small></p>
+            <form role="form" method="post">
+                <div class="mb-4">
+                    <label for="nama" class="form-label">Nama Lengkap</label>
+                    <input type="text" class="form-control" name="namaLengkap" value="<?php echo $data['nama'] ?>">
+                </div>
+                <div class="mb-4">
+                    <label for="nik" class="form-label">NIK</label>
+                    <input type="text" class="form-control" name="nik" value="<?php echo $data['nik'] ?>">
+                </div>
+                <div class="mb-4">
+                    <button type="submit" class="btn btn-primary" name="update" value="update">Update</button>
+                </div>
+            </form>
+
+            <?php
+            if (isset($_POST['update']))
+            {
+            $koneksi->query("UPDATE datapemilih SET nama='$_POST[namaLengkap]', nik='$_POST[nik]' WHERE id='$_GET[id]'");
+
+                if ($koneksi->error) {
+                    echo "<div class='alert alert-danger'>Update DPT GAGAL</div>";
+                } else {
+                    echo "<div class='alert alert-info'>Update DPT Berhasil</div>";
+                    echo "<meta http-equiv='refresh' content='1;url='../admin/dataPemilih.php'>";
+                }
+            }
+            ?>
+
         </div>
     </section>
-    
     <!-- END Hero Section -->
-
+<br>
+<br>
+<br>
+<br>
     <!-- Profile Developer -->
     <div class="text-center p-3 footer-bawah">
         <h5>Developed by</h5>
@@ -103,10 +107,5 @@ if ( !isset ($_SESSION["loginadmin"])) {
     
     <!-- Javascript -->
     <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function(){
-            $('table').DataTable();
-        });
-    </script>
 </body>
 </html>
