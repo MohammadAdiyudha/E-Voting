@@ -103,6 +103,6 @@ if ( !isset ($_SESSION["loginadmin"])) {
     <!-- END Profile Developer -->
     
     <!-- Javascript -->
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>
