@@ -11,7 +11,7 @@
             $notif = "<div class='alert alert-danger '>VOTE Gagal - Nama atau NIK tidak valid / Identitas tersebut sudah melakukan vote, 
                         \nJika terjadi kesalahan, Silahkan hubungi WA Admin 0812345 dengan melampirkan bukti SS</div>";
         } else {
-            $notif =  "<div class='alert alert-info'>VOTE Berhasil</div>";
+            $notif =  "<div class='alert alert-info'>Terimakasih Telah Berpartisipasi, Silahkan Pantau Hasil Pemilu</div>";
         }
     }
 
@@ -72,21 +72,26 @@
                     <label for="nik" class="form-label">NIK</label>
                     <input type="text" class="form-control" id="nik" name="nik">
                 </div>
+
+                   <h3 align="center"> Kepala Desa Empire 2021 </h3><br>
                 <div class="row mb-4">
                     <div class="form-check col-2">
+                        <h3 align="center"> 01 </h3>
                         <img src="images/thanosnos.jpg" alt="thanos" class="img-thumbnail">
                         <input class="form-check-input" type="radio" id="pilihan1" value="Suthanos" name="rb">
-                        <label class="form-check-label" for="pilihan1">Suthanos</label>
+                        <h6 align="center"><label class="form-check-label" for="pilihan1">Suthanos</label></h6>
                     </div>
                     <div class="form-check col-2">
+                        <h3 align="center"> 02 </h3>
                         <img src="images/ironman_tony.jpg" alt="tony sutorak" class="img-thumbnail">
                         <input class="form-check-input" type="radio" id="pilihan2" value="Tony Sutorak" name="rb">
-                        <label class="form-check-label" for="pilihan2">Tony Sutorak</label>
+                        <h6 align="center"><label class="form-check-label" for="pilihan2">Tony Sutorak</label></h6>
                     </div>
                     <div class="form-check col-2">
+                        <h3 align="center"> 03 </h3>
                         <img src="images/hulk.jpg" alt="hulak" class="img-thumbnail">
                         <input class="form-check-input" type="radio" id="pilihan3" value="Hulak" name="rb">
-                        <label class="form-check-label" for="pilihan3">Hulak</label>
+                        <h6 align="center"><label class="form-check-label" for="pilihan3">Hulak</label></h6>
                     </div>
                 </div>
                 <div class="mb-4">
