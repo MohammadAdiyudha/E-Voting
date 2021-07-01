@@ -25,6 +25,8 @@ if ( !isset ($_SESSION["loginadmin"])) {
     </script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
 </head>
 <body>
     <!-- Navbar -->
@@ -88,7 +90,7 @@ if ( !isset ($_SESSION["loginadmin"])) {
                         <td>
                         
                         <a href="hapus_data.php?id= <?= $hasil['id']; ?>" type="button" class="close">
-                        <span class="fa fa-trash"></span> 
+                        <span class="fa fa-trash"></span>
                         </a>
 
                         <div class="col-10">

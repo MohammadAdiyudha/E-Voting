@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 08, 2021 at 05:21 PM
+-- Generation Time: Jul 01, 2021 at 01:27 PM
 -- Server version: 10.4.18-MariaDB
--- PHP Version: 7.4.16
+-- PHP Version: 8.0.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `evoting`
 --
-CREATE DATABASE IF NOT EXISTS `evoting` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `evoting`;
 
 -- --------------------------------------------------------
 
@@ -32,7 +30,7 @@ USE `evoting`;
 CREATE TABLE `datapemilih` (
   `id` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
-  `nik` int(50) NOT NULL,
+  `nik` varchar(50) NOT NULL,
   `pilihan` varchar(50) NOT NULL,
   `waktupilih` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -42,17 +40,9 @@ CREATE TABLE `datapemilih` (
 --
 
 INSERT INTO `datapemilih` (`id`, `nama`, `nik`, `pilihan`, `waktupilih`) VALUES
-(5, 'sasas', 1212, 'Suthanos', '2021-06-08 19:21:31'),
-(6, 'qwqwqw', 121212, 'Suthanos', '2021-06-08 19:40:47'),
-(8, 'sasas', 211212, '', NULL),
-(18, 'tika', 97777, 'Tony Sutorak', '2021-06-08 19:23:32'),
-(19, 'ayam', 125125, 'Tony Sutorak', '2021-06-08 22:11:17'),
-(20, 'adiyudha', 123456789, '', NULL),
-(21, 'duoe', 3333, 'Tony Sutorak', '2021-06-08 21:14:21'),
-(23, 'cobaan', 9999, 'Tony Sutorak', '2021-06-08 21:13:38'),
-(24, 'coba lagi', 129481925, '', NULL),
-(25, 'yudha', 18102238, 'Hulak', '2021-06-08 21:53:45'),
-(29, 'cobalagi', 10101010, '', NULL);
+(102, 'Satria Galang Saputra', '18102249', '', NULL),
+(103, 'Muhammad Adhiyuda', '18102238', '', NULL),
+(104, 'Yustika Rahma', '18102109', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -99,7 +89,7 @@ ALTER TABLE `loginadmin`
 -- AUTO_INCREMENT for table `datapemilih`
 --
 ALTER TABLE `datapemilih`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=105;
 
 --
 -- AUTO_INCREMENT for table `loginadmin`

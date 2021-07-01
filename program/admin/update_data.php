@@ -18,9 +18,11 @@ $data = $ambil->fetch_assoc();
 <head>
    
     <title>Tambah Data</title>
-   <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom_style.css">
     <link rel="icon" href="../images/icon.png" type="image/x-icon">
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+
 </head>
 <body>
     <!-- Navbar -->
@@ -83,10 +85,9 @@ $data = $ambil->fetch_assoc();
             $koneksi->query("UPDATE datapemilih SET nama='$_POST[namaLengkap]', nik='$_POST[nik]' WHERE id='$_GET[id]'");
 
                 if ($koneksi->error) {
-                    echo "<div class='alert alert-danger'>Update DPT GAGAL</div>";
+                   echo '<script> Swal.fire("Update DPT Gagal","Pastikan Nama dan NIK Benar", "error");</script>';
                 } else {
-                    echo "<div class='alert alert-info'>Update DPT Berhasil</div>";
-                    echo "<meta http-equiv='refresh' content='1;url='../admin/dataPemilih.php'>";
+                    echo '<script> Swal.fire("Update DPT Berhasil","Silahkan Cek Pada Data Pemilih", "success");</script>';
                 }
             }
             ?>

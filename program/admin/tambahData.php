@@ -1,4 +1,4 @@
-<?php
+ <?php
 include '../koneksi.php';
 
 
@@ -14,9 +14,13 @@ if ( !isset ($_SESSION["loginadmin"])) {
 <head>
    
     <title>Tambah Data</title>
-   <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom_style.css">
     <link rel="icon" href="../images/icon.png" type="image/x-icon">
+
+     <!-- Javascript -->
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -62,11 +66,11 @@ if ( !isset ($_SESSION["loginadmin"])) {
             <form role="form" method="post">
                 <div class="mb-4">
                     <label for="nama" class="form-label">Nama Lengkap</label>
-                    <input type="text" class="form-control" name="namaLengkap" required>
+                    <input type="text" class="form-control" name="namaLengkap" required placeholder="Masukkan Nama">
                 </div>
                 <div class="mb-4">
                     <label for="nik" class="form-label">NIK</label>
-                    <input type="text" class="form-control" name="nik" required>
+                    <input type="text" class="form-control" name="nik" required placeholder="Masukkan NIK">
                 </div>
                 <div class="mb-4">
                     <button type="submit" class="btn btn-primary" name="tambah" value="tambah">Tambah</button>
@@ -80,10 +84,9 @@ if ( !isset ($_SESSION["loginadmin"])) {
                     VALUES('$_POST[namaLengkap]','$_POST[nik]')");
 
                 if ($koneksi->error) {
-                    echo "<div class='alert alert-danger'>Tambah DPT GAGAL</div>";
+                  echo '<script> Swal.fire("Tambah DPT Gagal","Nama dan NIK Sudah Terdaftar", "error");</script>';
                 } else {
-                    echo "<div class='alert alert-info'>Tambah DPT Berhasil</div>";
-                    echo "<meta http-equiv='refresh' content='1;url='../admin/tambahData.php'>";
+                    echo '<script> Swal.fire("Tambah DPT Berhasil","Silahkan Cek Pada Data Pemilih", "success");</script>';
                 }
             }
             ?>
@@ -101,8 +104,6 @@ if ( !isset ($_SESSION["loginadmin"])) {
         <p><small> Mohammad Adiyudha Wisnu Wardana - Satria Galang Saputra - Yustika Rahma </small> </p>
     </div>
     <!-- END Profile Developer -->
-    
-    <!-- Javascript -->
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
 </body>
 </html>

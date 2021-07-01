@@ -15,6 +15,12 @@ if (isset($_SESSION["loginadmin"])) {
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/custom_style.css">
     <link rel="icon" href="../images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../../node_modules/sweetalert/dist/sweetalert2.min.js">
+    <link href="../../node_modules/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+     <!-- Javascript -->
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="../../node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
     <!-- Navbar -->
@@ -55,16 +61,12 @@ if (isset($_SESSION["loginadmin"])) {
             <form role="form" method="post">
                 <div class="mb-4">
                     <label for="username" class="form-label">Username</label>
-                    <input type="text" class="form-control" name="username">
+                    <input type="text" class="form-control" name="username" placeholder="Enter Username">
                 </div>
                 <div class="mb-4">
                     <label for="pass" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="pass">
-                </div>
-                <div class="form-check">
-                    <input type="checkbox" class="form-check-input" name="checkbox">
-                    <label class="form-check-label" for="checkbox">Remember Me</label>
-                </div>
+                    <input type="password" class="form-control" name="pass" placeholder="Enter Password">
+                  </div>
                 <div class="mb-4 text-center">
                     <button type="submit" class="btn btn-primary" name="login" value="login">Login</button>
                 </div>
@@ -79,13 +81,19 @@ if (isset($_SESSION["loginadmin"])) {
                     if ($yangcocok==1)
                          {
                             $_SESSION['loginadmin'] =$ambil->fetch_assoc();
-                            echo"<div class ='alert alert-success'>login sukses</div>"; 
+                            echo '<script> Swal.fire({
+                                      position: "center",
+                                      icon: "success",
+                                      title: "Login Berhasil",
+                                      showConfirmButton: false,
+                                      timer: 10000
+                                    });</script>';
                             echo "<meta http-equiv='refresh' content='1;url=../admin/index.php'>";
                          }
                         else
                         {
-                            echo"<div class ='alert alert-danger'>login gagal</div>";
-                            echo "<meta http-equiv='refresh' content='1;url=../admin/admin-login.php'>";
+                            echo '<script> Swal.fire("Login Gagal","Pastikan username dan password yang anda masukkan benar", "error");</script>';
+                          
                           }
                         }
                     ?>
@@ -93,9 +101,5 @@ if (isset($_SESSION["loginadmin"])) {
     </section>
 
     <!-- END Form Section -->
-
-    
-    <!-- Javascript -->
-    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>
